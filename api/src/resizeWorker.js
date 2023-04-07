@@ -7,4 +7,4 @@ gm(workerData.source)
         if (error) throw error;
 
         parentPort.postMessage({resized: true})
-    })
+    });
