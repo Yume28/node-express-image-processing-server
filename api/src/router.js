@@ -13,8 +13,8 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (request, file, callback) => {
-    if (file.mimetype != 'image/png') {
-        request.fileValidationError = 'Wrong file type';
+    if (file.mimetype !== 'image/png') {
+        request.fileValidationError = 'Wrong file tpye';
         callback(null, false, new Error('Wrong file tpe'));
     } else {
         callback(null, true);
