@@ -9,10 +9,10 @@ const filename = (request, file, callback) => {
 
 const storage = multer.diskStorage({
     destination: 'api/uploads/',
-    filename,
+    filename
 });
 
-function fileFilter(request, file, callback) {
+const fileFilter = (request, file, callback) => {
     if (file.mimetype !== 'image/png') {
         request.fileValidationError = 'Wrong file tpye';
         callback(null, false, new Error('Wrong file tpe'));
