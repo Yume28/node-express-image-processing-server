@@ -12,14 +12,14 @@ const storage = multer.diskStorage({
     filename,
 });
 
-const fileFilter = (request, file, callback) => {
+function fileFilter(request, file, callback) {
     if (file.mimetype !== 'image/png') {
         request.fileValidationError = 'Wrong file tpye';
         callback(null, false, new Error('Wrong file tpe'));
     } else {
         callback(null, true);
     }
-};
+}
 
 const upload = multer ({
     fileFilter,
